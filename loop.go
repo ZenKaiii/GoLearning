@@ -34,9 +34,9 @@ func forever()  {
 	}
 }
 
-func main() {
-	fmt.Println(
-		convertToBin(13))
-
-	printFile("abc.txt")
-}
+//func main() {
+//	fmt.Println(
+//		convertToBin(13))
+//
+//	printFile("abc.txt")
+//}

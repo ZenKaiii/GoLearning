@@ -79,3 +79,79 @@ for scanner.Scan(){
 
 - 死循环：都省略
 
+### 2-6 函数
+
+- 函数可返回多个值
+- 返回多个值可以取名字
+- 函数式编程  -- 函数的参数也可以是函数
+
+```go
+func apply(op func(int,int) int, a,b int) int {
+	p:=reflect.ValueOf(op).Pointer()
+	opname := runtime.FuncForPC(p).Name()
+	fmt.Printf("%s \n", opname)
+	return op(a,b)
+}
+```
+
+- 可变参数列表
+
+```go
+func sum(numbers ...int) int{
+	s := 0
+	for i:= range numbers{
+		s += numbers[i]
+	}
+	return s
+}
+```
+
+### 2-7 指针
+
+- 指针不能运算
+
+#### 参数传递
+
+- go只有值传递
+
+## 3. 内建容器
+
+### 3-1 数组
+
+```go
+var arr1 [5]int
+arr2 := [3]int{1,3,5}
+arr3 := [...]int{2,3,4,5}
+var grid [4][5]int
+```
+
+#### 遍历
+
+```go
+for i,v := range arr3{
+		fmt.Println(i,v)
+	}
+```
+
+#### 数组是值类型
+
+- 调用函数会**拷贝**数组
+
+### 3-2 slice 切片
+
+- slice本身没有数据，是对底层的array的一个view
+
+#### reslice
+
+#### slice的扩展
+
+- ptr 、 len 、 cap
+- slice可以向后扩展，不可以向前扩展
+
+### 3-3 slice操作
+
+#### 1. 添加元素
+
+- 添加元素时如果超越cap，系统会重新分配更大的底层数组
+- 垃圾回收 √
+- 由于值传递的关系，必须接收append的返回值
