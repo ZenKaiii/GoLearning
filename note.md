@@ -155,3 +155,21 @@ for i,v := range arr3{
 - 添加元素时如果超越cap，系统会重新分配更大的底层数组
 - 垃圾回收 √
 - 由于值传递的关系，必须接收append的返回值
+
+### 3-4 map
+
+- 无序 hashmap
+
+#### 1. key
+
+- 除了slice map function 的内建类型都可以作为key
+
+### 3-5 寻找最长不含有重复字符的子串
+
+- lastOccured[x] 不存在，或者<start -> 无需操作
+- lastOccured[x] >= start -> 更新start
+- 更新lastOccured[x]，更新maxLength
+
+### 3-6 字符和字符串的处理
+
+- rune 相当于go的char
