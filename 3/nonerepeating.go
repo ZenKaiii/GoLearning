@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func lengthOfNonRepeatingSubstr(s string) int {
 	lastOccuered := make(map[rune]int)
 	start := 0
@@ -18,8 +16,8 @@ func lengthOfNonRepeatingSubstr(s string) int {
 	return maxLength
 }
 
-func main() {
-	fmt.Println(lengthOfNonRepeatingSubstr("abcabcbb"))
-	fmt.Println(lengthOfNonRepeatingSubstr("我是"))
-
-}
+//func main() {
+//	fmt.Println(lengthOfNonRepeatingSubstr("abcabcbb"))
+//	fmt.Println(lengthOfNonRepeatingSubstr("我是"))
+//
+//}

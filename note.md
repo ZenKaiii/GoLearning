@@ -173,3 +173,33 @@ for i,v := range arr3{
 ### 3-6 字符和字符串的处理
 
 - rune 相当于go的char
+
+## 4. 面向对象
+
+- go只支持封装，不支持继承多态（面向接口编程）
+- 没有class 只有struct
+
+### 4-1 结构体和方法
+
+- 不论是地址还是结构本身，一律使用 . 来访问成员
+
+- 使用自定义工厂函数，返回了局部变量地址
+
+```go
+func createNode(value int) *treeNode {
+	return &treeNode{value:value}
+}
+```
+
+- 定义方法:显示定义和命名方法接收者
+
+```go
+func (node *treeNode) setValue(value int) { //传引用
+	node.value = value
+}
+```
+
+- 使用指针作为方法接收者
+  - 只有使用指针作为方法接收者才可以改变结构内容
+  - nil指针也可以调用方法
+
