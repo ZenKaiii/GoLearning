@@ -1,28 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"math"
+	"time"
+)
 
-func plus(a int, b int) int  {
-	return a+b
+func plus(a int, b int) int {
+	return a + b
 }
 
-func sum(nums...int) {
-	fmt.Print(nums," ")
+func sum(nums ...int) {
+	fmt.Print(nums, " ")
 	total := 0
-	for _,num := range nums{
+	for _, num := range nums {
 		total += num
 	}
 	fmt.Println(total)
 }
 
 func fact(n int) int {
-	if n==0 {
+	if n == 0 {
 		return 1
 	}
 	return n * fact(n-1)
 }
 
-func intSeq() func() int{
+func intSeq() func() int {
 	i := 0
 	return func() int {
 		i += 1
@@ -30,7 +35,126 @@ func intSeq() func() int{
 	}
 }
 
+func zeroptr(iptr *int) {
+	*iptr = 0
+}
+
+type person struct {
+	name string
+	age  int
+}
+
+type geometry interface {
+	area() float64
+}
+
+type rect struct {
+	width, height float64
+}
+
+type circle struct {
+	radius float64
+}
+
+func (r rect) area() float64 {
+	return r.width * r.height
+}
+
+func (c circle) area() float64 {
+	return math.Pi * c.radius * c.radius
+}
+
+func measure(g geometry) {
+	fmt.Println(g)
+	fmt.Println(g.area())
+}
+
+func f1(arg int) (int, error) {
+	if arg == 42 {
+		return -1, errors.New("Can't do")
+	}
+	return arg + 3, nil
+}
+
+func f(form string) {
+	for i := 0; i < 3; i++ {
+		fmt.Println(form, ":", i)
+	}
+}
+
+func worker(done chan bool)  {
+	fmt.Println("working")
+	time.Sleep(time.Second)
+	fmt.Println("done")
+
+	done <- true
+}
+
+func ping(pings chan<- string, msg string)  {
+	pings <- msg
+}
+
+func pong(pings <-chan string, pongs chan<- string)  {
+	msg := <-pings
+	pongs <- msg
+}
+
 func main() {
+
+	
+
+	//done := make(chan bool, 1)
+	//go worker(done)
+	//<- done
+	//messages := make(chan string, 2)
+	//
+	//messages <- "hello"
+	//messages <- "world"
+	//messages <- "world"
+	//
+	//
+	//fmt.Println(<-messages)
+	//fmt.Println(<-messages)
+	//fmt.Println(<-messages)
+
+	//messages := make(chan string)
+	//
+	//go func() {
+	//	messages <- "ping"
+	//}()
+	//
+	//msg := <- messages
+	//fmt.Println(msg)
+
+	//f("direct")
+	//
+	//go f("goroutine")
+	//
+	//go func(msg string) {
+	//	fmt.Println(msg)
+	//}("going")
+	//
+	//var input string
+	//fmt.Scanln(&input)
+	//fmt.Println("done")
+
+	//for _,i := range []int{7,42} {
+	//	if r,e := f1(i); e != nil {
+	//		fmt.Println("failed",e)
+	//	}else{
+	//		fmt.Println("success",r)
+	//	}
+	//}
+
+	//r := rect{width: 3, height: 4}
+	//c := circle{radius: 5}
+	//
+	//measure(r)
+	//measure(c)
+
+	//f := rect{5,10}
+	//fmt.Println(f.area())
+
 	//f := "hello"
 	//fmt.Println(f)
 	//
@@ -124,5 +248,19 @@ func main() {
 	//nextInts := intSeq()
 	//fmt.Println(nextInts())
 
-	fmt.Println(fact(3))
+	//fmt.Println(fact(3))
+
+	//i := 1
+	//zeroptr(&i)
+	//fmt.Println(i)
+	//fmt.Println(&i)
+
+	//fmt.Println(person{"ann",12})
+	//s := person{
+	//	name: "asd",
+	//	age:  12,
+	//}
+	//fmt.Println(s)
+	//s.age = 123
+	//fmt.Println(s)
 }
