@@ -101,7 +101,48 @@ func pong(pings <-chan string, pongs chan<- string)  {
 
 func main() {
 
-	
+	//非阻塞通道
+
+
+	//超时处理
+	//c1 := make(chan string)
+	//go func() {
+	//	time.Sleep(time.Second * 1)
+	//	c1 <- "result 1"
+	//}()
+	//
+	//select {
+	//case res:= <-c1:
+	//	fmt.Println(res)
+	//case <- time.After(time.Second * 2):
+	//	fmt.Println("time out")
+	//
+	//}
+
+
+	// 通道选择器
+	//c1 := make(chan string)
+	//c2 := make(chan string)
+	//
+	//go func() {
+	//	time.Sleep(time.Second *1)
+	//	c1 <- "one"
+	//}()
+	//
+	//go func() {
+	//	time.Sleep(time.Second * 1)
+	//	c2 <- "two"
+	//}()
+	//
+	//for i:=0;i<2 ;i++  {
+	//	select {
+	//	case msg1:= <-c1:
+	//		fmt.Println(msg1)
+	//	case msg2:= <-c2:
+	//		fmt.Println(msg2)
+	//
+	//	}
+	//}
 
 	//done := make(chan bool, 1)
 	//go worker(done)
