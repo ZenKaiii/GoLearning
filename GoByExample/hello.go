@@ -101,8 +101,55 @@ func pong(pings <-chan string, pongs chan<- string)  {
 
 func main() {
 
-	//非阻塞通道
+	//工作池
 
+
+	//打点器
+	//ticker := time.NewTicker(time.Millisecond * 500)
+	//go func() {
+	//	for t := range ticker.C{
+	//		fmt.Println(t)
+	//	}
+	//}()
+	//
+	//time.Sleep(time.Millisecond * 1600)
+	//ticker.Stop()
+	//fmt.Println("stop")
+
+	//定时器
+	//timer1 := time.NewTimer(time.Second * 2)
+	//
+	//<-timer1.C
+	//fmt.Println("timer 1 expired")
+	//
+	//timer2 := time.NewTimer(time.Second)
+	//go func() {
+	//	<-timer2.C
+	//	fmt.Println("timer 2 expired")
+	//}()
+	//stop2 := timer2.Stop()
+	//if stop2 {
+	//	fmt.Println("timer2 stopped")
+	//}
+	//遍历通道
+	//queue := make(chan string, 2)
+	//queue <- "one"
+	//queue <- "two"
+	//close(queue)
+	//for elem := range queue{
+	//	fmt.Println(elem)
+	//}
+
+	//非阻塞通道
+	//messages := make(chan string)
+	////signals := make(chan bool)
+	//
+	//select {
+	//case msg := <-messages:
+	//	fmt.Println(msg)
+	//default:
+	//	fmt.Println("no msgs")
+	//}
 
 	//超时处理
 	//c1 := make(chan string)
