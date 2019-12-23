@@ -1,5 +1,10 @@
 # GoLearning
-## 1. 基础语法
+## 1. 导言
+
+- 没有对象 没有继承多态 没有泛型 没有try/catch
+- 有接口 函数式编程 CSP并发模型(gorountine + channel)
+
+## 2. 基础语法
 
 ### 2-1 变量定义
 
@@ -56,7 +61,10 @@
 
 ### 2-5 循环
 
-- for 可以省略初始条件，相当于while
+- for 条件不需要括号
+- for的初始条件，结束条件， 递增表达式都可以省略
+
+- for 省略初始条件，相当于while
 
 ```go
 func convertToBin(n int) string {
@@ -135,7 +143,8 @@ for i,v := range arr3{
 
 #### 数组是值类型
 
-- 调用函数会**拷贝**数组
+- 调用函数 数组作为参数 会**拷贝**数组
+- golang一般不直接用数组，而是**切片**
 
 ### 3-2 slice 切片
 
@@ -162,7 +171,23 @@ for i,v := range arr3{
 
 #### 1. key
 
+- map使用哈希表，必须可以比较相等
+
 - 除了slice map function 的内建类型都可以作为key
+
+#### 2. map操作
+
+- 创建：make(map[string]int)
+- 获取元素：m[key]
+- key不存在时，不会报错，获得value类型的初始值
+- 用value, ok := m[key]来判断是否存在key
+- 用delete删除一个key
+
+#### 3. map遍历
+
+- 使用range遍历key，或者遍历key，value对
+- 不保证遍历顺序，如需顺序，需要手动对key进行排序
+- 使用len获得元素
 
 ### 3-5 寻找最长不含有重复字符的子串
 
@@ -172,12 +197,21 @@ for i,v := range arr3{
 
 ### 3-6 字符和字符串的处理
 
-- rune 相当于go的char
+#### rune 相当于go的char
+
+- 使用range 遍历 pos，rune对
+- 使用utf8.RuneCountInString
+- 使用len获得字节长度
+- 使用[]byte获得字节
+
+#### 字符串其他操作
+
+- strings包里面
 
 ## 4. 面向对象
 
 - go只支持封装，不支持继承多态（面向接口编程）
-- 没有class 只有struct
+- 没有class 只有**struct**
 
 ### 4-1 结构体和方法
 

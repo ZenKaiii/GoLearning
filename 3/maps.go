@@ -21,4 +21,5 @@ package main
 //	delete(m, "name")
 //	name, ok:=m["name"]
 //	fmt.Println(name,ok)
+//
 //}
