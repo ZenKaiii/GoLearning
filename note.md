@@ -240,12 +240,13 @@ func (node *treeNode) setValue(value int) { //传引用
 
   - 要改变内容必须使用指针接收者
   - 结构过大也要使用指针接收者 (拷贝)
+  - **值接收者**go语言特有
 
 ### 4-2 封装
 
 - 名字使用CamelCase
 - 首字母大写：public
-- 首字母小写：private
+- 首字母小写：private 
 - 针对包来说 main是入口
 - 每个目录一个包
 - main包包含可执行入口

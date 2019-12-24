@@ -1,4 +1,4 @@
-package reall
+package real
 
 import (
 	"net/http"
@@ -7,8 +7,9 @@ import (
 )
 
 type Retriever struct {
-	UserAgner string
-	Timeout time.Duration
+	UserAgent string
+	TimeOut time.Duration
+
 }
 
 func (r *Retriever) Get(url string) string {
@@ -16,10 +17,13 @@ func (r *Retriever) Get(url string) string {
 	if err != nil{
 		panic(err)
 	}
+
 	result, err := httputil.DumpResponse(resp, true)
-	resp.Body.Close()
 	if err != nil{
 		panic(err)
 	}
 	return string(result)
 }
+
+
+

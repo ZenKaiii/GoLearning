@@ -1,12 +1,11 @@
 package main
 
 import (
-	"GoLearning/queue"
+	"GoLearning/4/queue"
 	"fmt"
-
 )
 
-func main() {
+func main(){
 	q := queue.Queue{1}
 
 	q.Push(2)
