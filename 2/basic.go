@@ -5,7 +5,7 @@ import (
 	"math"
 	"math/cmplx"
 )
-var (
+var ( //全局变量
 	aa = 33
 	bb = true
 	ss = "kk"
@@ -51,7 +51,7 @@ func triangle(){
 	fmt.Println(c)
 }
 
-func consts(){
+func consts() {
 	const filename = "abc.txt"
 	const a,b = 3,4
 	c := int(math.Sqrt((a*a + b*b)))

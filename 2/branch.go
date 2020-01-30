@@ -17,6 +17,8 @@ func grade(score int) string{
 		g = "B"
 	case score <=100:
 		g = "A"
+	default:
+		panic("wrong")
 
 	}
 	return g

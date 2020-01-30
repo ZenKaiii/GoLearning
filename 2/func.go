@@ -16,9 +16,9 @@ func eval(a,b int, op string) int {
 	case "*":
 		return a * b
 	case "/":
-		return a/b
+		return a / b
 	default:
-		panic("buzhidao "+op)
+		panic("不知道"+op)
 
 	}
 }

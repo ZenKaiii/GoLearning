@@ -2,7 +2,16 @@
 ## 1. 导言
 
 - 没有对象 没有继承多态 没有泛型 没有try/catch
-- 有接口 函数式编程 CSP并发模型(gorountine + channel)
+- 有接口 函数式编程 CSP并发模型(gorountine + channel) 
+
+### 1-1 概览
+
+- 基本语法
+- 面向接口
+- 函数式编程
+- 工程化
+- 并发编程
+- 实战项目
 
 ## 2. 基础语法
 
@@ -34,6 +43,8 @@
 - 只能在函数内使用
 
 ### 2-2 内建变量类型
+
+- bool string int byte rune(字符32位)
 
 - 强制类型转换（必须做）
 
@@ -327,4 +338,22 @@ func (node *treeNode) setValue(value int) { //传引用
 ### 6-2 例题一
 
 
+
+## 7.资源管理与出错处理
+
+### 7-1 defer调用
+
+- 确保调用在函数结束时发生 
+- defer里面相当于有一个栈，先进后出
+- 不怕return 和 panic
+
+- 参数在defer语句时计算
+
+#### 1. 何时使用defer调用
+
+- Open/Close
+- Lock/Unlcok
+- PrintHeader/PrintFooter
+
+### 7-2 错误处理概念
 
