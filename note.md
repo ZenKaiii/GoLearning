@@ -44,7 +44,7 @@
 
 ### 2-2 内建变量类型
 
-- bool string int byte rune(字符32位)
+- bool string int byte(8位) rune(字符32位) float32 float64 complex64 complex128
 
 - 强制类型转换（必须做）
 
@@ -61,6 +61,8 @@
 ### 2-4 条件语句
 
 #### if
+
+- if条件不需要括号
 
 - if的条件可以赋值
 - if条件赋值的变量作用域在这个if语句里

@@ -5,7 +5,7 @@ import (
 	"math"
 	"math/cmplx"
 )
-var ( //全局变量
+var ( //全局变量 包内
 	aa = 33
 	bb = true
 	ss = "kk"

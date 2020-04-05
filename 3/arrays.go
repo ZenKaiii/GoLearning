@@ -20,5 +20,8 @@ func printArray(arr [5]int)  {
 //	//for i:=0; i<len(arr3); i++{
 //	//	fmt.Println(arr3[i])
 //	//}
+//	for i, v := range arr3{
+//		...
+//	}
 //	printArray(arr3)
 //}
