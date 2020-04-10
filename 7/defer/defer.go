@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GoLearning/6/fib"
 	"bufio"
 	"fmt"
 	"os"
@@ -19,6 +20,7 @@ func tryDefer()  {
 }
 
 func Num(i int)int  {
+	//f
 	return i
 }
 
@@ -27,17 +29,23 @@ func writeFile(filename string)  {
 	if err != nil{
 		panic(err)
 	}
+
+	//if file, err := os.Create(filename); err!=nil{
+	//	panic(err)
+	//}
+
 	defer file.Close()
 
 	writer := bufio.NewWriter(file)
 	defer writer.Flush()
 
+	f := fib.Fibonacci()
 	for i:=0;i<20 ;i++  {
-		fmt.Fprintln(writer,i)
+		fmt.Fprintln(writer,f())
 	}
 }
 
 func main() {
-	//writeFile("hello.txt")
-	tryDefer()
+	writeFile("hello.txt")
+	//tryDefer()
 }

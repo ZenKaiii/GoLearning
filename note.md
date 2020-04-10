@@ -159,7 +159,7 @@ for i,v := range arr3{
 - 调用函数 数组作为参数 会**拷贝**数组
 - golang一般不直接用数组，而是**切片**
 
-### 3-2 slice 切片
+### 3-2 slice 切片   
 
 - slice本身没有数据，是对底层的array的一个view
 
@@ -358,4 +358,15 @@ func (node *treeNode) setValue(value int) { //传引用
 - PrintHeader/PrintFooter
 
 ### 7-2 错误处理概念
+
+```go
+file, err := os.Open("abc.txt")
+if err != nil{
+    if pathError, ok := err.(*os.PathError); ok {
+        fmt.Println(pathError.Err)
+    } else {
+        fmt.Println)("unknown error", err)
+    }
+}
+```
 

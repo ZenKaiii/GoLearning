@@ -6,6 +6,8 @@ func printSlice(s []int)  {
 	fmt.Println(s,len(s), cap(s))
 }
 
+// p12 9:46
+
 //func main() {
 //	var s []int // zero value for slice is nil
 //
@@ -15,8 +17,6 @@ func printSlice(s []int)  {
 //	}
 //	fmt.Println(s)
 //
-//	s1 := []int{2,3,4,5}
-//	fmt.Println(s1)
 //
 //	s2 := make([]int,10,32)
 //	printSlice(s2)
