@@ -370,3 +370,27 @@ if err != nil{
 }
 ```
 
+
+
+### 7-3 统一错误处理
+
+### 7-4 panic 和 recover
+
+#### panic
+
+- 停止当前函数执行
+- 一直向上返回，执行每一层defer
+- 如果没遇到recover，程序退出
+
+#### recover
+
+- 仅在defer调用中使用
+- 获取panic的值
+- r := recover()
+
+### 7-5 统一出错处理2
+
+
+
+
+
