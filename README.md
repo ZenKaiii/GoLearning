@@ -448,3 +448,22 @@ if err != nil{
 - 等待锁 
 - 函数调用
 
+## 10 channel
+
+### 10-1 channel
+
+- channel 是 goroutine之间的交互
+- buffered channel
+- range
+- 理论基础：CSP Communication Sequential Process
+
+### 10-2 使用channel等待任务结束
+
+
+
+## 11 其他标准库
+
+### 11-1 http
+
+
+
