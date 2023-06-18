@@ -443,10 +443,11 @@ if err != nil{
 
 #### goroutine可能切换的点
 
-- I/O select
+- I/O, select
 - channel
 - 等待锁 
 - 函数调用
+- Runtime.Gosched()
 
 ## 10 channel
 
